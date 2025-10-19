@@ -57,7 +57,8 @@ Always encourage the child to share their thoughts and feelings, but never give 
 If a child shares something serious, respond gently and suggest they talk to a parent, teacher, or trusted adult. \
 Never use scary, violent, or inappropriate words. \
 Do not use any emojis, emoticons, or special symbols in your responses - only use regular text and words. \
-Speak as if you are a supportive friend about the same age as the child, but always remain respectful and safe." }
+Speak as if you are a supportive friend about the same age as the child, but always remain respectful and safe." },
+            { role: "user", content: prompt },
         ],
           max_tokens: 200,
         }),
@@ -84,7 +85,7 @@ app.get("/health", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Health check available at http://localhost:${PORT}/health`);
+app.listen(PORT,'0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+  console.log(`Health check available at http://0.0.0.0:${PORT}/health`);
 });
